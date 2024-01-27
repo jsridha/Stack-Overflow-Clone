@@ -1,12 +1,25 @@
+# Stack Overflow Clone
+Authors: Jay Sridharan and Neha Joshi
+
+The goal of this project was to design and implement a full-stack application mimicking the popular forum website stackoverflow.com. Serverside management of requests was accomplished using Node.js and Express, while client side communication was implemented via Axios. Additionally, data persistence was managed through the implementation of MongoDB schemas which were managed via the Mongoose library. Testing was completed via Cypress.
+
 ## Instructions to setup and run project
 
 1. Install the required packages in client, server, and testing subdirectories by executing npm install.
-2. Populate the database by running node server/init.js.
-3. Go to server/ and run nodemon server.js.
-4. Go to client/ and run npm start.
-5. For running cypress tests, go to testing/ and run npx cypress open.
-6. The database can be dropped using, node server/destroy.js
+3. Populate the database by running node server/init.js.
+4. Go to server/ and run nodemon server.js.
+5. Go to client/ and run npm start.
+6. For running cypress tests, go to testing/ and run npx cypress open.
+7. The database can be dropped using, node server/destroy.js
 
+## Design Patterns Used
+- Design Pattern Name: Factory Pattern (createElement function in itemFactory.js)
+    - Problem Solved: the createElement function dynamically instantiates an object of the appropriate element type based on the type parameter. This allows you to create instances of different elements without having to specify their classes directly in the code.
+    - Location in code where pattern is used: init.js, newanswerform.js, newquestionpage.js, registerpage.js, commentsubmission.js
+- Design Pattern Name: Facade Pattern (/pages directory)
+    - Problem Solved: Provides an overarching simplified interface for the more complex subroutines defined in the files within /pages directory.
+    - Location in code where pattern is used: server.js
+      
 ## Test cases
 For speed when running tests, the individual unit tests are separated into individual .cy.js files based on the use case being tested. Files are named after the use cases they are testing (the only exception is for Comments, these tests are in Answers.cy.js). In the case of two use cases having identical names (such as difference in use case between registered user and guest), both sets of tests are contained in the same file.
 
@@ -108,13 +121,3 @@ Tests are separated into individual .cy.js files based on the UseCase being test
 |                 | 17.2           |
 |                 | 17.3           |
 |                 | 17.4           |
-
-
-## Design Patterns Used
-
-- Design Pattern Name: Factory Pattern (createElement function in itemFactory.js)
-    - Problem Solved: the createElement function dynamically instantiates an object of the appropriate element type based on the type parameter. This allows you to create instances of different elements without having to specify their classes directly in the code.
-    - Location in code where pattern is used: init.js, newanswerform.js, newquestionpage.js, registerpage.js, commentsubmission.js
-- Design Pattern Name: Facade Pattern (/pages directory)
-    - Problem Solved: Provides an overarching simplified interface for the more complex subroutines defined in the files within /pages directory.
-    - Location in code where pattern is used: server.js
