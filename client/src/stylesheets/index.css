@@ -1,0 +1,554 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #0077b5;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: inline-block;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.header-content h1 {
+    flex: 1;
+    margin: 0;
+    font-size: 30px;
+}
+
+#search {
+    flex: 2;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    /* Center the search bar horizontally */
+    align-items: center;
+    /* Center the search bar vertically */
+    margin-top: 10px;
+    /* Add some spacing between the text and search bar */
+}
+
+
+.hidden {
+    display: none;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+main {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+/* Sidebar navigation styles */
+#sideBarNav {
+    width: 15%;
+    height: 100%;
+    float: left;
+    border-right: 1px dotted #ccc;
+    padding: 5px;
+}
+
+/* Center align <button> elements in the sidebar */
+#sideBarNav button {
+    display: block;
+    width: 100%;
+    /* Make buttons fill the container width */
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Hover effect for <a> elements */
+#sideBarNav button:hover {
+    background-color: #ddd;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Style for the active link */
+#sideBarNav button.active {
+    background-color: #ccc;
+    color: #333;
+    font-weight: bold;
+}
+
+#main-content {
+    width: 80%;
+    float: right;
+}
+
+#title {
+    text-align: center;
+    padding: 20px 20;
+}
+
+#titlecontent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20 20px;
+}
+
+#subtitle {
+    text-align: center;
+    padding: 20px 20;
+}
+
+#subtitlecontent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20 20px;
+}
+
+#qCount {
+    float: left
+}
+
+#sortButtons {
+    float: right
+}
+
+#qList {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#questionDiv {
+    display: flex;
+    border-top: dotted;
+    border-bottom: dotted;
+    margin: 20px;
+}
+
+.postStats {
+    display: block;
+    text-align: center;
+    float: left;
+    width: 25%;
+    align-items: center;
+}
+
+.questionDivCenter {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.postTitle {
+    flex: 1;
+    align-items: center;
+}
+
+.lastActivity {
+    float: right;
+    width: 25%;
+    align-items: center;
+}
+
+#answersHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: left;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+
+#questionInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#questionInfo .voteContainer {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#questionInfo .commentVotes {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+#ansCount {
+    float: left;
+    order: 1;
+    font-weight: bold;
+}
+
+#questionTitle {
+    float: center;
+    order: 2;
+    font-weight: bold;
+    align-items: center;
+}
+
+#answersHeader button {
+    order: 3;
+}
+
+#questionBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+
+#views {
+    float: left;
+    margin: 10px;
+    font-weight: bold;
+    order: 1;
+}
+
+#questionText {
+    align-items: center;
+    margin: 10px;
+    order: 2;
+    flex-grow: 3;
+}
+
+#questionBody .lastActivity {
+    order: 3;
+}
+
+#ansList {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#answer {
+    display: flex;
+    border-top: dotted;
+    border-bottom: dotted;
+    padding: 10px;
+}
+
+#answer .voteContainer {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#answer .answerVotes {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.answerText {
+    float: left;
+    width: 75%;
+}
+
+.answerAuthor {
+    float: right;
+    width: 15%;
+}
+
+#tagsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tagNode {
+    border: #333;
+    border-style: dotted;
+    border-width: 1px;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    width: 25%;
+    margin-right: 2%;
+    text-align: center;
+}
+
+/* Center align <button> elements in the tagNode */
+.tagNode button {
+    display: block;
+    width: 100%;
+    /* Make buttons fill the container width */
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: bold;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Hover effect for <button> elements */
+.tagNode button:hover {
+    background-color: #ddd;
+    color: #333;
+    text-decoration: none;
+}
+
+#askQuestionForm, #editQuestionForm {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#askQuestionForm div,
+#editQuestionForm div {
+    margin-bottom: 10px;
+}
+
+#askQuestionForm input,
+#askQuestionForm textarea,
+#editQuestionForm input,
+#editQuestionForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+#askQuestionForm button,
+#editQuestionForm button {
+    background-color: #007BFF;
+    color: #fff;
+    margin: 10px 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#askQuestionForm button:hover,
+#editQuestionForm button:hover {
+    background-color: #0056b3;
+}
+
+#answerForm, #tagForm {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#answerForm div, #tagForm div {
+    margin-bottom: 10px;
+}
+
+#answerForm input,
+#answerForm textarea,
+#tagForm input,
+#tagForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#answerForm button,
+#tagForm button {
+    background-color: #007BFF;
+    color: #fff;
+    margin: 10px 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#answerForm button:hover,
+#tagForm button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+}
+
+#commentList .commentListContainer {
+    width: 100%;
+}
+
+#commentList #commentDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#commentList .voteContainer {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#commentList .commentVotes {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+#commentList .commentText {
+    width: 50%;
+    text-align: center;
+    /* Adjust as needed */
+}
+
+#commentList .commentDetails {
+    width: 15%;
+    text-align: right;
+}
+
+#commentList .paginationButtons {
+    margin-top: 10px;
+}
+
+#userProfileHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#userStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#userStats p {
+    margin: 10px 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+#userProfileMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#userProfileMenu button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#userProfileMenu button:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    margin-bottom: 10px;
+}
+
+/* Center align <button> elements in the sidebar */
+#userProfileQstnList #questionButton {
+    display: block;
+    width: 100%;
+    /* Make buttons fill the container width */
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Center align <button> elements in the sidebar */
+#userProfileAnsList #answerButton {
+    display: block;
+    width: 100%;
+    /* Make buttons fill the container width */
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#userProfileAnsList #answerButton:hover,
+#userProfileQstnList #questionButton:hover {
+    background-color: #ddd;
+    color: #333;
+    text-decoration: none;
+}
